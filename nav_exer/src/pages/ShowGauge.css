@@ -1,0 +1,8 @@
+.black-page {
+    background-color: black; /* Turns background black */
+    color: white; /* Ensures text is visible on black background */
+    height: 100vh; /* Makes the page take the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

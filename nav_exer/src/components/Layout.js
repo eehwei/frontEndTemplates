@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 
+
 const navItems = [
   { name: "Home", path: "/home"},
   { name: "About", path: "/about" },
@@ -13,6 +14,8 @@ const navItems = [
   {name:"No Page",path:"/nopage"},
   {name:"Pg1",path:"/pg1"},
   {name:"Dash",path:"/dash"},
+  {name:"Grades",path:"/grades"},
+  {name:"ShowGauge",path:"/showgauge"},
 ];
 
 export default function Layout() {

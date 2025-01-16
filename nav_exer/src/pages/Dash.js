@@ -20,35 +20,35 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button'; 
-import engtc from '../Avatar/engtc.jpeg';
+
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { useState } from "react";
+import BarChart1 from "../components/BarChart1";
+import TimePicker from '../components/TimePicker';
+import DonutChart from '../components/Donut';
+import { useNavigate } from 'react-router-dom';
 
-//import { ThemeProvider, createTheme } from '@mui/material/styles';
-//import { LineChart } from '@mui/x-charts/LineChart';
+function Donut1() {
+  return (
+    <Card>
+      <DonutChart />
+    </Card>
+  );
+}
 
 
-// const theme = createTheme();
-// function BasicLineChart() {
-// return (
-//     <ThemeProvider theme={theme}> {/* Wrap in ThemeProvider */}
-//     <LineChart
-//         xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
-//         series={[
-//         {
-//             data: [2, 5.5, 2, 8.5, 1.5, 5],
-//         },
-//         ]}
-//         width={500}
-//         height={300}
-//     />
-//     </ThemeProvider>
-// );
-// }
 
-const engtc = "../Avatar/engtc.jpeg";
-const chemtc = "../Avatar/chemtc.jpeg";
-const mathtc = "../Avatar/mathtc.avif";
+function Bar1(){
+  return(
+    <Card sx={{backgroundColor:'white',mt:2}}>
+        <BarChart1/>
+    </Card>
+  )
+}
+
+
+
+
 
 function Teacher() {
     const [showAll, setShowAll] = useState(false);
@@ -66,18 +66,19 @@ function Teacher() {
   
     return (
       <>
-        <Typography variant="h6" align="center" gutterBottom>
-          Teachers
-        </Typography>
+  
   
         <Card
           sx={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            p: 3,
+            p:2,m:1
           }}
         >
+          <Typography fontWeight="bold" display="flex" variant="h6" align="left" gutterBottom>
+          Teachers
+        </Typography>
           {visibleTeachers.map((teacher, index) => (
             <Box
               key={index}
@@ -176,6 +177,7 @@ function SearchAppBar() {
 }
 
 function Menu() {
+  const navigate=useNavigate();
   return (
     <MenuList display="flex" flexDirection="column" sx={{ height: '100%' }}>
       <MenuItem>
@@ -194,8 +196,10 @@ function Menu() {
         <Typography>Project</Typography>
       </MenuItem>
       <MenuItem>
+      <button display="flex" flewDirection="row" onClick={()=>navigate('/grades')} >
         <MilitaryTechIcon sx={{ mr: 1 }} />
         <Typography>Grades</Typography>
+      </button>
       </MenuItem>
 
       <Box sx={{ my: 2 }}>
@@ -297,13 +301,16 @@ export default function Dash() {
         >
             <Box id="left" gridColumn={"span 6"}>
                 <RegisterCard/>
-                {/*<BasicLineChart/>*/}
+                <Bar1/>
+                
             </Box>
             <Box id="mid" gridColumn={"span 3"}>
                 <Teacher/>
             </Box>
             <Box id="right" gridColumn={"span 3"}>
-                <Typography>bello</Typography>
+               
+            <TimePicker/>
+            <Donut1/>
             </Box>
             </Box>
       </Box>

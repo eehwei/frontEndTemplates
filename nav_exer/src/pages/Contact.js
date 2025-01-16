@@ -12,6 +12,7 @@ import Stack from '@mui/material/Stack';
 import { deepOrange, deepPurple } from '@mui/material/colors';
 
  function LetterAvatars() {
+  const navigate=useNavigate();
   return (
     <Stack direction="column" spacing={2}>
       <Box display="flex" direction="row"sx={{gap:2}}>
@@ -24,10 +25,11 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
       <Typography >Nana</Typography>
       </Box>
 
-      <Box display="flex" direction="row" sx={{gap:2, alignItems:"center"}}>
+      <button display="flex" direction="row" sx={{gap:2, alignItems:"center"}}
+      onClick={() => navigate('/dash')}>
       <Avatar alt="Elly" src={imagePath} sx={{ width: 100, height: 100 }}/>
       <Typography>Elly</Typography>
-      </Box>
+      </button>
     </Stack>
   );
 }
