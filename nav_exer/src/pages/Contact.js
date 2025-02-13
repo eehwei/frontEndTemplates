@@ -2,27 +2,25 @@ import Header from '../components/Header';
 import { useNavigate } from 'react-router-dom'; // Correct Hook for React Router
 import { Typography } from '@mui/material';
 import React from 'react';
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import imagePath from '../Avatar/girl.png';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import { deepOrange, deepPurple } from '@mui/material/colors';
+import { deepOrange,  } from '@mui/material/colors';
 
  function LetterAvatars() {
   const navigate=useNavigate();
   return (
     <Stack direction="column" spacing={2}>
-      <Box display="flex" direction="row"sx={{gap:2}}>
+      <Box display="flex" direction="row" sx={{gap:2}}>
         <Avatar>H</Avatar>
         <Typography>Hannah</Typography>
         </Box>
 
       <Box display="flex" direction="row" sx={{gap:2}}>
         <Avatar  sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
-      <Typography >Nana</Typography>
+      <Typography>Nana</Typography>
       </Box>
 
       <button display="flex" direction="row" sx={{gap:2, alignItems:"center"}}
@@ -35,13 +33,7 @@ import { deepOrange, deepPurple } from '@mui/material/colors';
 }
 
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
+
 
 // FullWidthGrid component
 export function FullWidthGrid() {
@@ -66,7 +58,7 @@ export function FullWidthGrid() {
 
 // Contact component
 export default function Contact(){
-  const navigate = useNavigate(); // Hook to navigate programmatically
+  // Hook to navigate programmatically
 
   return (
     <>
